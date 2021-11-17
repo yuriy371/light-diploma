@@ -867,6 +867,28 @@ hr.white {
 	left: 0;
 	background: rgba(0, 0, 0, 0.5);
 }
+.top-slider .dots {
+	position: absolute;
+	bottom: 15px;
+	display: flex;
+	align-items: center;
+	right: 50%;
+	z-index: 99;
+}
+.top-slider .dot {
+	width: 15px;
+	height: 15px;
+	border: 2px solid #ffffff;
+	border-radius: 50px;
+	margin: 0 5px;
+	transition: 0.4s;
+}
+.top-slider .dot-active {
+	width: 18px;
+	height: 18px;
+	background: #318ce7;
+	transform: scale(1.2);
+}
 .top-slider .table {
 	position: relative;
 	z-index: 10;
