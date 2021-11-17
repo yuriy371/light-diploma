@@ -1,1 +1,1 @@
-(()=>{"use strict";document.querySelector(".top-menu").addEventListener("click",(e=>{let t=e.target;e.target.matches("ul>li>a")&&(e.preventDefault(),(e=>{let t=e.getAttribute("href").slice(1);document.getElementById(t).scrollIntoView({behavior:"smooth",block:"start"})})(t))}))})();
+(()=>{"use strict";document.body.addEventListener("click",(t=>{((t,e)=>{let l=e;e.matches("ul>li>a")&&(t.preventDefault(),(t=>{let e=t.getAttribute("href").slice(1);document.getElementById(e).scrollIntoView({behavior:"smooth",block:"start"})})(l))})(t,t.target)}))})();

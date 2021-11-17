@@ -1,5 +1,5 @@
-const scroll = () => {
-    let menu = document.querySelector(".top-menu");
+const scroll = (e, targ) => {
+    let nameTag = targ
 
     let smoothScroll = (itemScrol) => {
         let blockID = itemScrol.getAttribute('href').slice(1)
@@ -9,14 +9,10 @@ const scroll = () => {
         })
     }
 
-    menu.addEventListener("click", (e) => {
-        let nameTag = e.target
-
-        if (e.target.matches("ul>li>a")) {
-            e.preventDefault()
-            smoothScroll(nameTag)
-        }
-    })
+    if (targ.matches("ul>li>a")) {
+        e.preventDefault()
+        smoothScroll(nameTag)
+    }
 }
 
 export default scroll
