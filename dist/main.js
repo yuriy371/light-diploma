@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("test")})();
+(()=>{"use strict";(()=>{let e=document.querySelectorAll(".header-email");console.log(e)})()})();

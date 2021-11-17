@@ -1,3 +1,3 @@
-import test from "./modules/test"
+import scroll from "./modules/scroll"
 
-test()
+scroll()
