@@ -1,4 +1,4 @@
-const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", dotAct = "dot-active") => {
+const slider = (classSliderBlock, classSlides, classDots = "dot", slideAct = "active", dotAct = "dot-active", itemAct = "item-active") => {
     let sliderBlock = document.querySelector(classSliderBlock)
     let slides = document.querySelectorAll(classSlides)
     let portfolioDots = document.querySelector(classDots)
@@ -27,24 +27,16 @@ const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", d
     }
 
     let prevSlide = (elems, index, strClass) => {
-        if (elems[index].classList[0] === "item") {
-            elems[index].style.display = "none"
-        } else {
-            elems[index].classList.remove(strClass)
-        }
+        elems[index].classList.remove(strClass)
     }
 
     let nextSlide = (elems, index, strClass) => {
-        if (elems[index].classList[0] === "item") {
-            elems[index].style.display = "block"
-        } else {
-            elems[index].classList.add(strClass)
-        }
+        elems[index].classList.add(strClass)
     }
 
     let autoSlide = () => {
         prevSlide(slides, currentSlide, slideAct)
-        prevSlide(sliderImg, currentSlide)
+        prevSlide(sliderImg, currentSlide, itemAct)
         prevSlide(dots, currentSlide, dotAct)
 
         currentSlide++
@@ -54,7 +46,7 @@ const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", d
         }
 
         nextSlide(slides, currentSlide, slideAct)
-        nextSlide(sliderImg, currentSlide)
+        nextSlide(sliderImg, currentSlide, itemAct)
         nextSlide(dots, currentSlide, dotAct)
     }
 
@@ -84,7 +76,7 @@ const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", d
 
         prevSlide(slides, currentSlide, slideAct)
         prevSlide(dots, currentSlide, dotAct)
-        prevSlide(sliderImg, currentSlide)
+        prevSlide(sliderImg, currentSlide, itemAct)
 
         if (e.target.matches("#arrow-right")) {
             currentSlide++
@@ -108,7 +100,7 @@ const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", d
 
         nextSlide(slides, currentSlide, slideAct)
         nextSlide(dots, currentSlide, dotAct)
-        nextSlide(sliderImg, currentSlide)
+        nextSlide(sliderImg, currentSlide, itemAct)
     })
 
     sliderBlock.addEventListener("mouseenter", (e) => {
@@ -122,8 +114,7 @@ const slider = (classSliderBlock, classSlides, classDots, slideAct = "active", d
             startSlide(timeInterval)
         }
     }, true)
-
-
+    
     creatDot()
     startSlide(timeInterval)
 }

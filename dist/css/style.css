@@ -853,9 +853,13 @@ hr.white {
 	height: 450px;
 }
 .top-slider .item {
+	display: none;
 	overflow: hidden;
 	height: 450px;
 	position: relative;
+}
+.top-slider .item.item-active {
+	display: block;
 }
 .top-slider .item:before {
 	content: "";
@@ -873,7 +877,7 @@ hr.white {
 	display: flex;
 	align-items: center;
 	right: 50%;
-	z-index: 99;
+	z-index: 70;
 }
 .top-slider .dot {
 	width: 15px;
@@ -1161,13 +1165,14 @@ video#video_background {
 	-o-transition: all 200ms ease-out;
 	transition: all 200ms ease-out;
 	margin-top: -24px;
-	z-index: 2;
+	z-index: 11;
 	opacity: 0;
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
 	text-transform: uppercase;
 	border: 2px solid #fff;
+	cursor: pointer;
 }
 .services-section .element:hover .img-wrapper:before {
 	opacity: 1;
@@ -1207,6 +1212,17 @@ video#video_background {
 	-moz-transition: all 200ms ease-out;
 	-o-transition: all 200ms ease-out;
 	transition: all 200ms ease-out;
+}
+.services-carousel {
+	display: flex;
+	/* overflow: hidden; */
+	flex-wrap: wrap;
+}
+.services-carousel .element {
+	display: none;
+}
+.services-carousel .element.active {
+	display: block;
 }
 .services-section .element:hover .title-h5:after {
 	-moz-transform: rotate(45deg);

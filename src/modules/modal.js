@@ -12,7 +12,11 @@ const modal = (e, targ) => {
     } else {
         return
     }
-    
+
+    if (targ.matches(".img-wrapper")) {
+        modalCallback.style.display = "block"
+        modalOverlay.style.display = "block"
+    }
 }
 
 export default modal
