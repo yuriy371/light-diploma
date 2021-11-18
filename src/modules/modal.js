@@ -16,6 +16,11 @@ const modal = (e, targ) => {
     if (targ.matches(".img-wrapper")) {
         modalCallback.style.display = "block"
         modalOverlay.style.display = "block"
+    }else if (targ.matches(".button-services")) {
+        modalCallback.style.display = "block"
+        modalOverlay.style.display = "block"
+    } else {
+        return
     }
 }
 
