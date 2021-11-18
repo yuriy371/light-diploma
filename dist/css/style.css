@@ -1256,6 +1256,7 @@ video#video_background {
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
+	display: none;
 	width: 70px;
 	height: 70px;
 	z-index: 300;
@@ -1263,6 +1264,9 @@ video#video_background {
 	padding: 0 2px;
 	cursor: pointer;
 	background-color: rgba(0, 0, 0, 0.6);
+}
+.up.view {
+	display: block;
 }
 
 @media only screen and (min-width: 992px) {
