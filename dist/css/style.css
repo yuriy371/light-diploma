@@ -1002,6 +1002,9 @@ video#video_background {
 	font-size: 13px;
 	color: #888885;
 }
+.accordeon .element-content.active {
+	display: block;
+}
 .accordeon .element {
 	margin-bottom: 6px;
 	background: #fff;
@@ -1048,7 +1051,7 @@ video#video_background {
 	background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
 .accordeon > div:first-of-type .element-content {
-	display: block;
+	/* display: block; */
 }
 .accordeon .element .title:hover:before {
 	background-color: #333;
