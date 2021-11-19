@@ -17,7 +17,7 @@ const scroll = (e, targ) => {
         smoothScroll(nameTag)
     }
     
-    if (targ.matches("img")) {
+    if (targ.matches(".up")) {
         e.preventDefault()
         elemUp.scrollIntoView({
             behavior: 'smooth',

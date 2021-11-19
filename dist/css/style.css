@@ -279,6 +279,7 @@ a.absolute {
 	position: absolute;
 	top: 10px;
 	right: 10px;
+	z-index: 92;
 	cursor: pointer;
 }
 .modal-callback {
@@ -291,7 +292,7 @@ a.absolute {
 	max-width: 100%;
 	background: #fff;
 	padding: 55px 25px 35px;
-	z-index: 99;
+	z-index: 91;
 }
 #responseMessage .modal-content.error {
 	color: #2fab6d;

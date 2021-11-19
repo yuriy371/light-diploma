@@ -45,7 +45,7 @@
 
 	<div class="main-wrapper">
 		<!-- * * * * * * Header * * * * * * -->
-		<div class="header-wrapper" >
+		<div class="header-wrapper">
 			<div class="header-panel">
 				<div class="container">
 					<div class="shedule left hidden-xs">
@@ -620,31 +620,34 @@
 	<!-- * * * * * * Footer: end * * * * * * -->
 
 
-	<div class="modal-overlay"></div>
-	<!-- * * * * * * Callback modal block * * * * * * -->
-	<div class="modal-callback" id="callback">
-		<div class="modal-close">
-			<img src="images/close_icon_green.svg" alt="modal-close">
-		</div>
-		<div class="title-h2">Мы перезвоним через 5 минут!</div>
-		<br />
-		<div class="rf">
-			<form action="" name="form-callback">
-				<div class="form-group">
-					<input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
-				</div>
+	<div class="modal-overlay">
+		<!-- * * * * * * Callback modal block * * * * * * -->
+		<div class="modal-callback" id="callback">
+			<div class="modal-close">
+				<img src="images/close_icon_green.svg" alt="modal-close">
+			</div>
+			<div class="title-h2">Мы перезвоним через 5 минут!</div>
+			<br />
+			<div class="rf">
+				<form action="" name="form-callback" id="form">
+					<div class="form-group">
+						<input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
+					</div>
 
-				<div class="form-group">
-					<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
-				</div>
-				<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
-				<div>
-					<input type="submit" class="button btn feedback" value="Отправить" />
-				</div>
-			</form>
+					<div class="form-group">
+						<input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
+					</div>
+					<p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
+					<div>
+						<!-- <input type="submit" class="button btn feedback" value="Отправить" /> -->
+						<button class="button btn feedback">Отправить</button>
+					</div>
+				</form>
+			</div>
 		</div>
+		<!-- * * * * * * Callback modal block: end * * * * * * -->
 	</div>
-	<!-- * * * * * * Callback modal block: end * * * * * * -->
+
 
 
 	<!-- * * * * * * Feedback modal block * * * * * * -->

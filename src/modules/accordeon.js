@@ -3,16 +3,16 @@ const accordeon = (e, targ) => {
     let accordElem = accordeon.querySelectorAll(".element")
     let accordText = accordeon.querySelectorAll(".element-content")
 
-    if (targ.closest(".element")) {
+    if (targ.closest(".accordeon>.element")) {
         let tabsBtn = targ.closest(".element")
-
-        accordElem.forEach((tab, index) =>{
+        accordElem.forEach((tab, index) => {
             if (tab === tabsBtn) {
                 tab.classList.add("active")
                 accordText[index].classList.add("active")
             } else {
                 tab.classList.remove("active")
                 accordText[index].classList.remove("active")
+
             }
         })
     }
