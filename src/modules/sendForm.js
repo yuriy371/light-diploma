@@ -1,9 +1,11 @@
 import { animate, avtoCloseModal } from "./helpers"
-const sendForm = () => {
-    let form = document.getElementById("form")
+const sendForm = ({ formId }) => {
+    let form = document.getElementById(formId)
+    let winWidth = document.documentElement.clientWidth
 
     let statusBlock = document.createElement("div")
     let loadText = "Идет отправка..."
+    let attentionText = "Заполните все поля"
     let errorText = "Ошибка"
     let successText = "Спасибо! Наш менеджер с вами свяжется."
 
@@ -43,9 +45,8 @@ const sendForm = () => {
         let success = true
 
         list.forEach(input => {
-            if (!input.classList.contains("success")) {
+            if (!input.classList.contains("success") && input.value === "") {
                 success = false
-                console.log(input);
             }
         })
 
@@ -81,22 +82,29 @@ const sendForm = () => {
                     if (statusBlock) {
                         avtoCloseModal({
                             elemModal(modalCall, modalOver) {
-                                if (modalCall.style.opacity == 1) {
-                                    animate({
-                                        duration: 500,
-                                        timing(timeFraction) {
-                                            return timeFraction;
-                                        },
-                                        draw(progress) {
-                                            modalCall.style.opacity = 1 - progress
+                                if (winWidth < 768) {
+                                    clearInterval(animate)
+                                    modalCall.style.opacity = ""
+                                    modalOver.style.display = "none"
+                                } else {
+                                    if (modalCall.style.opacity == 1) {
+                                        animate({
+                                            duration: 500,
+                                            timing(timeFraction) {
+                                                return timeFraction;
+                                            },
+                                            draw(progress) {
+                                                modalCall.style.opacity = 1 - progress
 
-                                            if (modalCall.style.opacity == 0) {
-                                                modalCall.style.display = "none"
-                                                modalOver.style.display = "none"
+                                                if (modalCall.style.opacity == 0) {
+                                                    modalCall.style.display = "none"
+                                                    modalOver.style.display = "none"
+                                                }
                                             }
-                                        }
-                                    });
+                                        });
+                                    }
                                 }
+
                             }
                         })
                         statusBlock.remove()
@@ -107,14 +115,21 @@ const sendForm = () => {
                 statusBlock.textContent = successText
                 formElements.forEach(input => {
                     input.value = ""
+                    input.classList.remove("success")
                 })
             })
                 .catch(error => {
                     statusBlock.textContent = errorText
                 })
         } else {
+            let clearStatBlock = setInterval(() => {
+                if (statusBlock) {
+                    statusBlock.remove()
+                    clearInterval(clearStatBlock)
+                }
+            }, 3000)
+            statusBlock.textContent = attentionText
             console.log("error");
-            console.log(validate(formElements, item));
         }
     }
 
